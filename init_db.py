@@ -1,11 +1,11 @@
 import sqlite3
-conn = sqlite3.connect('../data/scraping.db')
+conn = sqlite3.connect('data/scraping.db')
 
 c = conn.cursor()
 
 # Create table
-c.execute('''CREATE TABLE items
-             (time text, url text, pattern text, content text)''')
+c.execute('''CREATE TABLE web_items
+             (scrape_time text, url text, pattern text, content text)''')
 
 # Save (commit) the changes
 conn.commit()

@@ -1,10 +1,12 @@
+from datetime import datetime
 
-class item:
+
+class web_item:
     """
     Class to store the scaping results
     """
-    def __init__(self, time, url, pattern, content):
-        self.time = time
+    def __init__(self, url, pattern, content):
+        self.time = str(datetime.now())
         self.url = url
         self.pattern = pattern
         self.content = content

@@ -1,7 +1,9 @@
+from datetime import datetime
 import re
 import asyncio
 import aiohttp
 import logging
+import db
 
 
 @asyncio.coroutine
@@ -29,6 +31,8 @@ async def pull_urls(patterns, shutdown):
                     html = await fetch(session, url)
                     # Extract content using regex
                     content = await extract_content(html, pattern[0])
+                    # Insert db
+                    await db.insert_item((str(datetime.now()), url, pattern[0], str(content)))
                     logging.info(content)
                     await asyncio.sleep(3)
                 except Exception as e:
