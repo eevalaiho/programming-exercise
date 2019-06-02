@@ -21,5 +21,5 @@
         
 To run the program command:
 
-    $ python3 src/main.py
+    $ python3 scraper
 You can stop program execution by typing Ctrl+C.
