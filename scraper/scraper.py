@@ -45,12 +45,12 @@ async def pull_urls(url_group, sleep_interval=3):
             try:
                 html = await fetch(session, url)
                 # Extract content using regex
-                content = await extract_content(html, url_group[0])
+                matches = await extract_content(html, url_group[0])
                 # Insert db
-                item = scrapeItem.scrapeItem(url, url_group[0], str(content))
+                item = scrapeItem.scrapeItem(url, url_group[0], matches)
                 await db.insert_scrapeItem(item)
                 # Write log
-                logging.info(str(item))
+                logging.info(item)
             except Exception as e:
                 logging.info(str(e))
 

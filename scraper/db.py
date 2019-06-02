@@ -13,8 +13,8 @@ async def insert_scrapeItem(item):
     conn = sqlite3.connect('./data/scraping.db')
     try:
         c = conn.cursor()
-        sql = "INSERT INTO scrapeItem (scrape_time, url, pattern, content) VALUES (?, ?, ?, ?)"
-        c.execute(sql, (item.time, item.url, item.pattern, item.content))
+        sql = "INSERT INTO scrapeItem (scrape_time, url, pattern, matches) VALUES (?, ?, ?, ?)"
+        c.execute(sql, (item.time, item.url, item.pattern, str(item.matches)))
         conn.commit()
     except Exception as e:
         logging.error(str(e), item)

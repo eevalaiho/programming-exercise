@@ -7,7 +7,7 @@ def createDb(path):
         c = conn.cursor()
         # Create table
         c.execute('''CREATE TABLE scrapeItem
-                    (scrape_time text, url text, pattern text, content text)''')
+                    (scrape_time text, url text, pattern text, matches text)''')
         # Save (commit) the changes
         conn.commit()
     except Exception as e:
