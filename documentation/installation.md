@@ -8,7 +8,7 @@
         $ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
 1. Cd to program's main directory:
 
-        $ cd CGI-programming-exercise
+        $ cd programming-exercise
 1. Create an Anaconda environment for the application:
 
         $ conda create -n <env-name> python=3.6 aiohttp pytest
