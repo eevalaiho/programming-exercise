@@ -19,7 +19,7 @@ The scraped data is stored as it is since the task description didn't set any re
 
 ## Installation
 
-[Installation guide](documentation(installation.md)
+[Installation guide](documentation/installation.md)
 
 ## User guide
 
