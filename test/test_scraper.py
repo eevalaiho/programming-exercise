@@ -1,16 +1,16 @@
-import mock
-#import pytest
+import asyncio
+import pytest
+
+from src.scraper import scraper
 
 
-def test_init():
-    from src import hello
-
-    with mock.patch.object(hello, "main", return_value="Hello Eeva"):
-        with mock.patch.object(hello, "__name__", "__main__"):
-            hello.main("Eeva")
-
-
-if __name__ == '__main__':
-    test_init()
+@pytest.fixture
+def event_loop():
+    loop = asyncio.get_event_loop()
+    yield loop
+    loop.close()
 
 
+def extract_content(event_loop): #extract_content(str, pattern):
+    expected = 'dolor'
+    assert expected == event_loop.run_until_complete(extract_content('lorem ipsum <pre>dolor</pre> amet'))

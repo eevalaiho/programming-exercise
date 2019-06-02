@@ -10,7 +10,7 @@ async def insert_scrapeItem(item):
     :param item: The item
     :return: void
     """
-    conn = sqlite3.connect('../data/scraping.db')
+    conn = sqlite3.connect('./data/scraping.db')
     try:
         c = conn.cursor()
         sql = "INSERT INTO scrapeItem (scrape_time, url, pattern, content) VALUES (?, ?, ?, ?)"

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class ScrapeItem:
+class scrapeItem:
     """
     Class to store the scaping results
     """
@@ -10,6 +10,14 @@ class ScrapeItem:
         self.url = url
         self.pattern = pattern
         self.content = content
+
+    def __dict__(self):
+        return {
+            'time': self.time,
+            'url': self.url,
+            'pattern': self.pattern,
+            'content': self.content
+        }
 
     def __str__(self):
         return "%s: %s, %s, %s" % (self.time, self.url, self.pattern, self.content)
