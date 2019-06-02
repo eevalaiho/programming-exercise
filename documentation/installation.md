@@ -15,7 +15,11 @@
 1. Activate the environment
 
         $ source activate <env-name>
-1. Run the program
+1. Initialize database
+
+        $ python3 init_db.py
+        
+To run the program type:
 
         $ python3 src/main.py
-    You can stop program execution by typing Ctrl+C
+You can stop program execution by typing Ctrl+C.
