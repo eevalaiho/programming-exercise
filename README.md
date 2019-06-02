@@ -38,7 +38,7 @@ Follow the [installation guide](documentation/installation.md) to install the pr
 
 Cd to the program's main directory:
 
-    $ cd <download-directory>/CGI-programming-exercise
+    $ cd <download-directory>/programming-exercise
 
 Execute the program:
 
