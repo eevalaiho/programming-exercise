@@ -1,6 +1,7 @@
 # Installation
 
 1. Cd to to the directory where you want to clone the repository:
+
         ```
         $ cd <directory-name>
         ```
