@@ -6,7 +6,7 @@ A python programming exercise to implement a simple web scraper, see [complete t
 
 ## Implementation
 
-The web scraping part of the task is implemented using python's asyncio library that supports asynchronous web requests and concurrent execution. For simplicity each url_group is processed in it's own thread. In a real application a more versatile implementation would of course be needed. After sending each request the thread is put to sleep for a certain interval (1 sec by default). This is to not to flood connections. 
+The web scraping part of the task is implemented using python's asyncio library that supports asynchronous web requests and concurrent execution. For simplicity each url_group is processed in it's own thread. In a real application a more versatile implementation would of course be needed. To space out the requests (and to not overwhelm servers) the thread is put to sleep for a certain time interval (3 sec by default) after sending each request. 
 
 Scraped data is stored in a local SQLite database. SQLite was chosen because of it's light-weightedness and ease of implementation. SQLite does not support concurrent writes, but the implementation can be easily trasformed so that it supports a full database engine, for example PostgreSQL.
 
