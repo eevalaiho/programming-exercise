@@ -17,5 +17,5 @@
         $ source activate <env-name>
 1. Run the app
 
-        $ python3 main.py
+        $ python3 src/main.py
     You can stop the execution by typing Ctrl+C
