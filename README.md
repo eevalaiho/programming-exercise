@@ -8,7 +8,7 @@ A python programming exercise to implement a simple web scraper, see [complete t
 
 ### Web-scraping
 
-The web scraping part of the task is implemented using python's asyncio library that supports asynchronous web requests and concurrent execution. For simplicity each url_group is processed in it's own thread. In a real application a more versatile implementation would of course be needed. To space out the requests (and to not overwhelm servers) the thread is put to sleep for a certain time interval (3 sec by default) after sending each request. 
+The web scraping part of the task is implemented using [aiohttp](https://github.com/aio-libs/aiohttp) which is a python library that supports asynchronous web requests and concurrent execution. For simplicity each url_group is processed in it's own thread. In a real application a more versatile implementation would of course be needed. To space out the requests (and to not overwhelm servers) the thread is put to sleep for a certain time interval (3 sec by default) after sending each request. 
 
 ### Data storage
 
