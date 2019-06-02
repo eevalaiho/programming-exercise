@@ -1,7 +1,7 @@
 import asyncio
 import pytest
 
-from src.scraper import scraper
+from scraper.scraper import scraper
 
 
 @pytest.fixture

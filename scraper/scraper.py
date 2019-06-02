@@ -1,7 +1,7 @@
 import logging
 import re
 import asyncio, aiohttp
-from scrapeItem import scrapeItem
+import scrapeItem
 import db
 
 

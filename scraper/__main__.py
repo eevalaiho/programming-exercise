@@ -4,8 +4,7 @@ import logging
 import signal
 import sys
 from concurrent.futures import CancelledError
-
-from scraper import scraper
+import scraper
 
 def shutdown(msg=""):
     """Performs a clean shutdown"""
