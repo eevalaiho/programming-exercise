@@ -1,22 +1,25 @@
 # Installation
 
-1. Cd to to the directory where the repository was cloned:
-```
-$ cd <directory-name>
-```
-2. Clone the repository from git
-```
-$ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
-```
-3. Create an Anaconda environment for the application
-```
-$ conda create -n <env-name> python=3.6 aiohttp
-```
-4. Activate the environment
-```
-$ source activate <env-name>
-```
-5. Run the app
-```
-$ python3 main.py
-```
+1. Cd to the directory where you want to clone the repository:
+
+        $ cd <directory-name>
+1. Clone the repository:
+
+        $ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
+1. Cd to program's main directory:
+
+        $ cd CGI-programming-exercise
+1. Create an Anaconda environment for the application:
+
+        $ conda create -n <env-name> python=3.6 aiohttp pytest
+1. Activate the environment
+
+        $ source activate <env-name>
+1. Initialize database
+
+        $ python3 init_db.py
+        
+To run the program command:
+
+    $ python3 src/main.py
+You can stop program execution by typing Ctrl+C.
