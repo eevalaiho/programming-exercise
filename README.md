@@ -26,7 +26,7 @@ The task description didn't set any specific requirements for storage format. Th
 
 First cd to the program's main directory:
 
-    $ cd <download-dorectory>/CGI-programming-exercise
+    $ cd <download-directory>/CGI-programming-exercise
 
 To run the program command:
 
