@@ -2,7 +2,7 @@
 
 1. Cd to the directory where you want to clone the repository:
 
-        $ cd <directory-name>
+        $ cd <path-to-the-directory>
 1. Clone the repository:
 
         $ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
