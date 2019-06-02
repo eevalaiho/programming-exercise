@@ -1,6 +1,6 @@
 # Programming exercise
 
-## Task
+## The task
 
 A python programming exercise to implement a simple web scraper, see [complete task description](documentation/cand_prog_task.md).
 
@@ -23,6 +23,10 @@ The db.py file contains logic for working with the database.
 Scraped data is stored in a local [SQLite](https://www.sqlite.org/index.html) database. SQLite was chosen because of it's light-weightedness and ease of implementation. SQLite does not support concurrent writes, but the implementation can be easily trasformed so that it supports a full database engine, for example PostgreSQL.
 
 The task description didn't set any specific requirements for storage format. The scraped and extracted data is stored as a json string. Json format was chosen mainly because python supports json natively and json is easily queryable. 
+
+## Testing
+
+[Test report](documentation/testing.md)
 
 ## Installation
 
