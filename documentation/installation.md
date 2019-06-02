@@ -17,7 +17,7 @@
         $ source activate <env-name>
 1. Initialize database
 
-        $ python3 init_db.py
+        $ python3 init_app.py
         
 To run the program command:
 
