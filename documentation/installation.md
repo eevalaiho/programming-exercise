@@ -2,10 +2,10 @@
 
 1. Cd to to the directory where you want to clone the repository:
 
-        $ cd <directory-name>
+    $ cd <directory-name>
 2. Clone the repository:
 
-        $ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
+    $ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
 3. Create an Anaconda environment for the application:
 
         ```
