@@ -10,7 +10,13 @@ A python programming exercise to implement a simple web scraper, see [complete t
 
 The web scraping part of the task is implemented using [aiohttp](https://github.com/aio-libs/aiohttp) which is a python library that supports asynchronous web requests and concurrent execution. 
 
-The main.py file contains the logic for supervising the asynchronous and concurrent execution of the web scraping tasks. The tasks are described simply as tuples of a regular expression and a group of url's. To demonstrate concurrent execution the scraping tasks are executed in multiple threads. For simplicity each group of urls is processed in it's own thread. In a real application a more versatile implementation would of course be needed. To space out the requests (and to not overwhelm servers) the thread is put to sleep for a certain time interval (3 sec by default) after sending each request. 
+The main.py file contains the logic for supervising the asynchronous and concurrent execution of the web scraping tasks. The tasks are described simply as tuples of a regular expression and a group of url's. To demonstrate concurrent execution the scraping tasks are executed in multiple threads. For simplicity each group of urls is processed in it's own thread. In a real application a more versatile implementation would of course be needed. 
+
+Actual web scraping code is implemented in scraper.py -file.  To space out the requests (and to not overwhelm servers) the thread is put to sleep for a certain time interval (3 sec by default) after sending each request. 
+
+The scrapeItem.py file contains the model for the scraped item. 
+
+The db.py file contains logic for working with the database.
 
 ### Data storage
 
