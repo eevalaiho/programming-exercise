@@ -4,7 +4,7 @@ conn = sqlite3.connect('data/scraping.db')
 c = conn.cursor()
 
 # Create table
-c.execute('''CREATE TABLE web_items
+c.execute('''CREATE TABLE scrapeItem
              (scrape_time text, url text, pattern text, content text)''')
 
 # Save (commit) the changes

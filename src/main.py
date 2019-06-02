@@ -1,30 +1,33 @@
 import asyncio
-import scraper
 import functools
 import logging
 import signal
 import sys
 from concurrent.futures import CancelledError
 
+import scraper
 
-def shutdown():
+def shutdown(msg=""):
     """Performs a clean shutdown"""
-    logging.info('received stop signal')
-    for task in asyncio.Task.all_tasks():
-        logging.info(task)
-        logging.info('cancelling task')
+    logging.info('Received stop signal: %s' % msg)
+    for idx, task in enumerate(asyncio.Task.all_tasks()):
+        #logging.info(task)
+        logging.info('Cancelling task %s' % idx)
         task.cancel()
 
 
-def supervisor(loop, urls):
+def supervisor(loop, url_groups):
     try:
-        #while True:
-        result = loop.run_until_complete(scraper.pull_urls(urls, functools.partial(shutdown)))
-        logging.info(result)
+        tasks = []
+        # Make one batch of each url group
+        for group in url_groups:
+            tasks.append(asyncio.ensure_future(scraper.pull_urls(group)))
+        # Execute tasks
+        loop.run_until_complete(asyncio.gather(*tasks))
     except CancelledError:
-        logging.info('CancelledError')
+        shutdown("CancelledError")
     except KeyboardInterrupt:
-        logging.info('KeyboardInterrupt')
+        shutdown("KeyboardInterrupt")
     loop.close()
     sys.exit(1)
 
@@ -37,13 +40,11 @@ def main():
     loop.add_signal_handler(signal.SIGHUP, functools.partial(shutdown, loop))
     loop.add_signal_handler(signal.SIGTERM, functools.partial(shutdown, loop))
 
-    urls = (('<title>([^<]*)</title>', ['http://www.helsinki.fi', 'http://www.cgi.com']),
+    url_groups = [('<title>([^<]*)</title>', ['http://www.helsinki.fi', 'http://www.cgi.com']),
         ('<pre>([^<]*)</pre>', ['http://www.helsinki.fi',  'https://github.com/eevalaiho']),
-        ('<media>([^<]*)</media>', ['http://www.cgi.com', 'https://github.com/eevalaiho']))
+        ('<media>([^<]*)</media>', ['http://www.cgi.com', 'https://github.com/eevalaiho'])]
 
-    urls = [('<title>([^<]*)</title>', ['http://www.helsinki.fi', 'http://www.cgi.com'])]
-
-    supervisor(loop, urls)
+    supervisor(loop, url_groups)
 
 
 if __name__ == '__main__':

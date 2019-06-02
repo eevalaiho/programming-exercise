@@ -1,9 +1,7 @@
-from datetime import datetime
-import re
-import asyncio
-import aiohttp
 import logging
-import db
+import re
+import asyncio, aiohttp
+import scrapeItem, db
 
 
 @asyncio.coroutine
@@ -18,23 +16,22 @@ async def extract_content(html, pattern):
 
 
 @asyncio.coroutine
-async def pull_urls(patterns, shutdown):
+async def pull_urls(url_group, sleep_interval=3):
 
     # Fetch content
     async with aiohttp.ClientSession() as session:
-        for idx, pattern in enumerate(patterns):
-            logging.info("%s: %s" % (idx, pattern[0]))
-            for jdx, url in enumerate(pattern[1]):
-                logging.info("%s: %s" % (jdx, url))
-                # Fetch html content
-                try:
-                    html = await fetch(session, url)
-                    # Extract content using regex
-                    content = await extract_content(html, pattern[0])
-                    # Insert db
-                    await db.insert_item((str(datetime.now()), url, pattern[0], str(content)))
-                    logging.info(content)
-                    await asyncio.sleep(3)
-                except Exception as e:
-                    logging.info(str(e))
-    shutdown()
+        for url in url_group[1]:
+            # Fetch html content
+            try:
+                html = await fetch(session, url)
+                # Extract content using regex
+                content = await extract_content(html, url_group[0])
+                # Insert db
+                item = scrapeItem.ScrapeItem(url, url_group[0], str(content))
+                await db.insert_scrapeItem(item)
+                # Write log
+                logging.info(str(item))
+            except Exception as e:
+                logging.info(str(e))
+
+            await asyncio.sleep(sleep_interval)
