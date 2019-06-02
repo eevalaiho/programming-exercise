@@ -1,15 +1,22 @@
+import os
 import sqlite3
-conn = sqlite3.connect('data/scraping.db')
 
-c = conn.cursor()
+def createDb(path):
+    conn = sqlite3.connect(path)
+    try:
+        c = conn.cursor()
+        # Create table
+        c.execute('''CREATE TABLE scrapeItem
+                    (scrape_time text, url text, pattern text, content text)''')
+        # Save (commit) the changes
+        conn.commit()
+    except Exception as e:
+        conn.close()
+        print('Error creating database')
+        throw(e)
+    conn.close()
 
-# Create table
-c.execute('''CREATE TABLE scrapeItem
-             (scrape_time text, url text, pattern text, content text)''')
-
-# Save (commit) the changes
-conn.commit()
-
-# We can also close the connection if we are done with it.
-# Just be sure any changes have been committed or they will be lost.
-conn.close()
+if __name__ == "__main__":
+    if not os.path.exists('data'):
+        os.makedirs('data')
+    createDb('data/scraping.db')
