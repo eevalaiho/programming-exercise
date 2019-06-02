@@ -2,7 +2,7 @@
 
 ## The task
 
-A python programming exercise to implement a simple web scraper, see [complete task description](documentation/cand_prog_task.md).
+Using python implement a simple web scraper, see [complete task description](documentation/cand_prog_task.md).
 
 ## Implementation
 
