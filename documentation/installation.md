@@ -19,7 +19,7 @@
 
         $ python3 init_db.py
         
-To run the program issue:
+To run the program command:
 
     $ python3 src/main.py
 You can stop program execution by typing Ctrl+C.
