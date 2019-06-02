@@ -6,7 +6,7 @@
 1. Clone the repository:
 
         $ git clone https://github.com/eevalaiho/CGI-programming-exercise.git
-1. Cd to the (downloaded) sub-directory:
+1. Cd to program's main directory:
 
         $ cd CGI-programming-exercise
 1. Create an Anaconda environment for the application:
