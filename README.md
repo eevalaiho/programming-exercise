@@ -24,15 +24,17 @@ The task description didn't set any specific requirements for storage format. Th
 
 ## User guide
 
-First cd to the program's main directory:
+Follow the [installation guide](documentation/installation.md) to install the program. 
+
+Cd to the program's main directory:
 
     $ cd <download-directory>/CGI-programming-exercise
 
-To run the program command:
+Execute the program:
 
     $ python3 src/main.py
 
-You can stop program execution any time by typing Ctrl+C.
+You may stop program execution at any time by typing Ctrl+C.
 
 
 
