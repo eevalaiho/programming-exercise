@@ -26,7 +26,7 @@ The task description didn't set any specific requirements for storage format. Th
 
 ## Testing 
 
-[Tetsing document](documentation/testing.md)
+[Testing document](documentation/testing.md)
 
 ## Installation
 
