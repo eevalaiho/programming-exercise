@@ -35,9 +35,9 @@ You can stop program execution by typing Ctrl+C.
 
 
 
-## **Optional** installation (testing)
+## **Optional** installation for testing
 
-1. Install libraries for testing
+1. Install libraries
 
     [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
     
