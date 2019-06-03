@@ -1,4 +1,6 @@
-# Installation
+# Installation guide
+
+## Program installation
 
 1. Cd to the directory where you want to clone the repository:
 
@@ -20,16 +22,29 @@
     [```aiohttp```](https://anaconda.org/conda-forge/aiohttp)
     
         $ conda install -c conda-forge aiohttp
-1. **Optional**: Install libraries for testing
 
-    [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
-    
-        $ conda install -c conda-forge pytest pytest-mock pytest-async
 1. Initialize database
 
         $ python3 init_app.py
-        
+
+
 To run the program command:
 
     $ python3 scraper
 You can stop program execution by typing Ctrl+C.
+
+
+
+## **Optional** installation (testing)
+
+1. Install libraries for testing
+
+    [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
+    
+        $ conda install -c conda-forge pytest pytest-mock pytest-async
+
+
+To run tests command:
+
+    $ pytest
+
