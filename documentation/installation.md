@@ -23,7 +23,9 @@
     
         $ conda install -c conda-forge aiohttp
 
-1. Initialize database (will be created in ```data``` -subdirectory)
+1. Initialize application
+
+Running the init_app.py command will create a local database file in subdirectory ```data``` and append project modules subdirectory in python path.
 
         $ python3 init_app.py
 
