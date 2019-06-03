@@ -6,6 +6,8 @@ Tests have been implemented against and using ```pytest```, ```pytest-asyncio```
 
 ## Running the tests
 
+Follow the (installation guide)[installation.md] to install the optional libraries for testing.
+
 Cd to the program's main directory:
 
     $ cd <path-to-download-directory>/programming-exercise
