@@ -11,7 +11,7 @@
 1. Cd to program's main directory:
 
         $ cd programming-exercise
-1. Create an ```Anaconda``` environment for the application:
+1. Create an [```Anaconda```](https://anaconda.org/) environment for the application:
 
         $ conda create -n <env-name> python=3.6 aiohttp pytest pytest-asyncio pytest-mock
 1. Activate the environment
@@ -28,8 +28,6 @@
 Running the init_app.py command will create a local database file in subdirectory ```data``` and append project path in python path.
 
         $ python3 init_app.py
-
-
 To run the program command:
 
     $ python3 app
