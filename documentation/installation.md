@@ -23,7 +23,7 @@
     
         $ conda install -c conda-forge aiohttp
 
-1. Initialize database
+1. Initialize database (will be created in ```data``` -subdirectory)
 
         $ python3 init_app.py
 
