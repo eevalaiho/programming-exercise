@@ -19,7 +19,7 @@
 
     [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock)
     
-    $ conda install -c conda-forge pytest-mock
+        $ conda install -c conda-forge pytest-mock
 1. Initialize database
 
         $ python3 init_app.py
