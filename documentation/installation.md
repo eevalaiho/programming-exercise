@@ -11,7 +11,7 @@
         $ cd programming-exercise
 1. Create an Anaconda environment for the application:
 
-        $ conda create -n <env-name> python=3.6 aiohttp pytest
+        $ conda create -n <env-name> python=3.6 aiohttp pytest pytest-asyncio
 1. Activate the environment
 
         $ source activate <env-name>
