@@ -13,7 +13,7 @@
         $ cd programming-exercise
 1. Create an [```Anaconda```](https://anaconda.org/) environment for the application:
 
-        $ conda create -n <env-name> python=3.6 aiohttp pytest pytest-asyncio pytest-mock
+        $ conda create -n <env-name> python=3.6
 1. Activate the environment
 
         $ source activate <env-name>     
@@ -28,7 +28,7 @@
         $ python3 init_app.py
 To run the program command:
 
-    $ python3 app
+    $ python3 app.py
     
 You can stop program execution by typing Ctrl+C.
 
@@ -36,9 +36,9 @@ You can stop program execution by typing Ctrl+C.
 
 ## **Optional** installation for testing
 
-1. Install libraries [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
+1. Install libraries [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-asyncio```](https://anaconda.org/conda-forge/pytest-asyncio)
     
-        $ conda install -c conda-forge pytest pytest-mock pytest-async
+        $ conda install -c conda-forge pytest pytest-mock pytest-asyncio
 
 To run tests command:
 
