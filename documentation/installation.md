@@ -28,7 +28,7 @@
         $ python3 init_app.py
 To run the program command:
 
-    $ python3 app
+    $ python3 app.py
     
 You can stop program execution by typing Ctrl+C.
 
