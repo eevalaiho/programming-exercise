@@ -8,7 +8,7 @@ Tests have been implemented against and using ```pytest```, ```pytest-asyncio```
 
 Cd to the program's main directory:
 
-$ cd <path-to-download-directory>/programming-exercise
+        $ cd <path-to-download-directory>/programming-exercise
 Execute tests:
 
-$ pytest
+        $ pytest
