@@ -20,9 +20,9 @@ The db.py file contains logic for working with the database.
 
 ### Data storage
 
-Scraped data is stored in a local [SQLite](https://www.sqlite.org/index.html) database. SQLite was chosen because of it's light-weightedness and ease of implementation. SQLite does not support concurrent writes, but the implementation can be easily trasformed so that it supports a full database engine, for example PostgreSQL.
+Scraped data is stored in a local [SQLite](https://www.sqlite.org/index.html) database. SQLite was chosen because of it's light-weightedness and ease of implementation. SQLite does not support concurrent writes, but the implementation can be easily migrated to use a full-fledged database engine such as PostgreSQL.
 
-The task description didn't set any specific requirements for storage format. The scraped and extracted data is stored as a json string. Json format was chosen mainly because python supports json natively and json is easily queryable. 
+The task description didn't set any specific requirements for storage format. Thus the scraped and extracted data (a list of strings) is stored as one string. 
 
 ## Testing
 
@@ -42,7 +42,7 @@ Cd to the program's main directory:
 
 Execute the program:
 
-    $ python3 src/main.py
+    $ python3 scraper
 
 You may stop program execution at any time by typing Ctrl+C.
 

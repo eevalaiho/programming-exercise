@@ -11,15 +11,15 @@
         $ cd programming-exercise
 1. Create an Anaconda environment for the application:
 
-        $ conda create -n <env-name> python=3.6 aiohttp pytest
+        $ conda create -n <env-name> python=3.6 aiohttp pytest pytest-asyncio
 1. Activate the environment
 
         $ source activate <env-name>
 1. Initialize database
 
-        $ python3 init_db.py
+        $ python3 init_app.py
         
 To run the program command:
 
-    $ python3 src/main.py
+    $ python3 scraper
 You can stop program execution by typing Ctrl+C.
