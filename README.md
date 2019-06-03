@@ -24,18 +24,9 @@ Scraped data is stored in a local [```SQLite```](https://www.sqlite.org/index.ht
 
 The task description didn't set any specific requirements for storage format. Thus the scraped and extracted data (a list of strings) is stored in the database as one text string (along with some more information). 
 
-## Testing
+## Testing 
 
-Testing implementation
-Tests have been implemented against and using pytest, pytest-asyncio and mock libraries. Full test coverage has not been a motivation but rather demonstrating the use the libraries.
-
-Running the tests
-Cd to the program's main directory:
-
-    $ cd <path-to-download-directory>/programming-exercise
-Execute tests:
-
-    $ pytest
+[Installation guide](documentation/testing.md)
 
 ## Installation
 
@@ -44,26 +35,4 @@ Execute tests:
 ## User guide
 
 Follow the [installation guide](documentation/installation.md) to install the program. 
-
-### Running the program
-
-Cd to the program's main directory:
-
-    $ cd <path-to-download-directory>/programming-exercise
-
-Execute the program:
-
-    $ python3 app
-
-You may stop program execution at any time by typing Ctrl+C.
-
-### Running tests
-
-Cd to the program's main directory:
-
-    $ cd <path-to-download-directory>/programming-exercise
-    
-Execute tests:
-
-    $ pytest
 
