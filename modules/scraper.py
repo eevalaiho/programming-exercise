@@ -1,8 +1,8 @@
 import logging
 import re
 import asyncio, aiohttp
-import scrapeItem
-import db
+
+from modules import scrapeItem, db
 
 
 @asyncio.coroutine
@@ -14,7 +14,9 @@ async def fetch(session, url):
     :return: response.text()
     """
     async with session.get(url) as response:
-        return await response.text()
+        status = response.status
+        text = await response.text()
+    return (status, text)
 
 
 @asyncio.coroutine
@@ -43,11 +45,11 @@ async def pull_urls(url_group, sleep_interval=3):
         for url in url_group[1]:
             # Fetch html content
             try:
-                html = await fetch(session, url)
+                (status, content) = await fetch(session, url)
                 # Extract content using regex
-                matches = await extract_content(html, url_group[0])
+                matches = await extract_content(content, url_group[0])
                 # Insert db
-                item = scrapeItem.scrapeItem(url, url_group[0], matches)
+                item = scrapeItem.scrapeItem(url, status, url_group[0], matches)
                 await db.insert_scrapeItem(item)
                 # Write log
                 logging.info(item)

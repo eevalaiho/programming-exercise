@@ -4,7 +4,8 @@ import logging
 import signal
 import sys
 from concurrent.futures import CancelledError
-import scraper
+
+from modules import scraper
 
 
 def shutdown(msg=""):
