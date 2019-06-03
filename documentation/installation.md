@@ -20,7 +20,7 @@
     [```aiohttp```](https://anaconda.org/conda-forge/aiohttp)
     
         $ conda install -c conda-forge aiohttp
-1. Optional: Install libraries for testing
+1. *Optional*: Install libraries for testing
 
     [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
     
