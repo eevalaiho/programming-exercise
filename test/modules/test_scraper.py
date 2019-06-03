@@ -1,6 +1,5 @@
 import aiohttp
 import pytest
-#from pytest_mock import mocker
 
 import modules
 from modules.scraper import extract_content, fetch, pull_urls

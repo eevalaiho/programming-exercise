@@ -1,8 +1,6 @@
 import asyncio
 import logging
 
-import pytest
-
 import app
 
 

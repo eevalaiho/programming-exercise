@@ -4,6 +4,7 @@ import logging
 import signal
 import sys
 from concurrent.futures import CancelledError
+from time import sleep
 
 from modules import scraper
 
@@ -16,14 +17,20 @@ def shutdown(msg=""):
         task.cancel()
 
 
-def supervisor(loop, url_groups):
+def supervisor(loop, url_groups, rerun_interval=3, space_requests_interval=1):
     try:
-        tasks = []
-        # Make one batch of each url group
-        for group in url_groups:
-            tasks.append(asyncio.ensure_future(scraper.pull_urls(group)))
-        # Execute tasks
-        loop.run_until_complete(asyncio.gather(*tasks))
+        while True:
+            tasks = []
+            # Make one batch of each url group
+            for group in url_groups:
+                tasks.append(asyncio.ensure_future(scraper.pull_urls(group, space_requests_interval)))
+            # Execute tasks
+            loop.run_until_complete(asyncio.gather(*tasks))
+            # Shutdown tasks
+            shutdown("Tasks executed")
+            # Sleep
+            logging.info('Going to sleep for %s sec' % rerun_interval)
+            sleep(rerun_interval)
 
     except CancelledError:
         shutdown("CancelledError")
@@ -39,13 +46,14 @@ def main():
 
     # Url's to process
     urls = ['http://www.helsinki.fi', 'http://www.cgi.com',  'https://github.com/eevalaiho']
-    url_groups = [('<title>([^<]*)</title>', urls),
-                  ('(<link[^>]*>)', urls),
-                  ('(UA\-[\w\d-]+)', urls)]
+    url_groups = [(r'<title>([^<]*)</title>', urls),
+                  (r'(<link[^>]*>)', urls),
+                  (r'(UA\-[\w\d-]+)', urls)]
 
-
+    """
     urls = ['https://github.com/eevalaiho']
-    url_groups = [('<title>([^<]*)</title>', urls)]
+    url_groups = [(r'<title>([^<]*)</title>', urls)]
+    """
 
     # Setup logging
     logging.getLogger().setLevel(logging.INFO)
