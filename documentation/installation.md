@@ -13,7 +13,7 @@
         $ cd programming-exercise
 1. Create an [```Anaconda```](https://anaconda.org/) environment for the application:
 
-        $ conda create -n <env-name> python=3.6 aiohttp pytest pytest-asyncio pytest-mock
+        $ conda create -n <env-name> python=3.6
 1. Activate the environment
 
         $ source activate <env-name>     
