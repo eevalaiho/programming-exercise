@@ -43,6 +43,10 @@ def main():
                   ('(<link[^>]*>)', urls),
                   ('(UA\-[\w\d-]+)', urls)]
 
+
+    urls = ['https://github.com/eevalaiho']
+    url_groups = [('<title>([^<]*)</title>', urls)]
+
     # Setup logging
     logging.getLogger().setLevel(logging.INFO)
 

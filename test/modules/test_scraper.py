@@ -1,30 +1,28 @@
-import asyncio
 import aiohttp
 import pytest
+#from pytest_mock import mocker
 
-from modules.scraper import extract_content, fetch
-
-"""
-@pytest.fixture
-def event_loop():
-    loop = asyncio.get_event_loop()
-    yield loop
-    loop.close()
+import modules
+from modules.scraper import extract_content, fetch, pull_urls
 
 
-def test_extract_content(event_loop):
+@pytest.mark.asyncio
+async def test_pull_urls_fetch(mocker):
+    mocker.patch.object(modules.scraper, 'fetch')
+    urls = ['https://github.com/eevalaiho']
+    url_groups = ('<title>([^<]*)</title>', urls)
+    await pull_urls(url_groups, sleep_interval=0) # Let's not sleep since we have only one url
+    modules.scraper.fetch.assert_called_once()
 
-    # Test match
-    expected = ['dolor']
-    assert expected == event_loop.run_until_complete(
-        )
 
-    # Test no match
-    expected = []
-    assert expected == event_loop.run_until_complete(
-        extract_content('lorem ipsum <pre>dolor</pre> amet', '<title>([^<]*)</title>'))
+@pytest.mark.asyncio
+async def test_pull_urls_extract_content(mocker):
+    mocker.patch.object(modules.scraper, 'extract_content')
+    urls = ['https://github.com/eevalaiho']
+    url_groups = ('<title>([^<]*)</title>', urls)
+    result = await pull_urls(url_groups, sleep_interval=0) # Let's not sleep since we have only one url
+    modules.scraper.extract_content.assert_called_once()
 
-"""
 
 @pytest.mark.asyncio
 async def test_extract_content_match():

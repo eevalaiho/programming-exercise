@@ -40,6 +40,7 @@ async def pull_urls(url_group, sleep_interval=3):
     :param sleep_interval: interval to space out the requests in seconds, default 3
     :return:
     """
+    print(url_group)
     # Fetch content
     async with aiohttp.ClientSession() as session:
         for url in url_group[1]:

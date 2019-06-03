@@ -10,6 +10,9 @@ async def insert_scrapeItem(item):
     :param item: The item
     :return: void
     """
+    if item is None:
+        return
+
     conn = sqlite3.connect('./data/scraping.db')
     try:
         c = conn.cursor()
