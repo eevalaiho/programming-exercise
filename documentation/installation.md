@@ -25,7 +25,7 @@
 
 1. Initialize application
 
-Running the init_app.py command will create a local database file in subdirectory ```data``` and append project modules subdirectory in python path.
+Running the init_app.py command will create a local database file in subdirectory ```data``` and append project path in python path.
 
         $ python3 init_app.py
 
