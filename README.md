@@ -44,7 +44,7 @@ Cd to the program's main directory:
 
 Execute the program:
 
-    $ python3 app
+    $ python3 app.py
 
 You may stop program execution at any time by typing Ctrl+C.
 
