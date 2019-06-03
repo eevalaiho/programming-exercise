@@ -36,9 +36,9 @@ You can stop program execution by typing Ctrl+C.
 
 ## **Optional** installation for testing
 
-1. Install libraries [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
+1. Install libraries [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-asyncio```](https://anaconda.org/conda-forge/pytest-asyncio)
     
-        $ conda install -c conda-forge pytest pytest-mock pytest-async
+        $ conda install -c conda-forge pytest pytest-mock pytest-asyncio
 
 To run tests command:
 
