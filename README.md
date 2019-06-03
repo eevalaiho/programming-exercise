@@ -8,7 +8,7 @@ Using python implement a simple web scraper, see [complete task description](doc
 
 ### Web-scraping
 
-The web scraping part of the task is implemented using [aiohttp](https://github.com/aio-libs/aiohttp). Aiohttp is a python library that supports asynchronous web requests and concurrent execution. 
+The web scraping part of the task is implemented using [```aiohttp```](https://github.com/aio-libs/aiohttp). Aiohttp is a python library that supports asynchronous web requests and concurrent execution. 
 
 The main.py file contains the logic for supervising the asynchronous and concurrent execution of the web scraping tasks. The tasks are described simply as tuples of a regular expression and a group of url's. To demonstrate concurrent execution the scraping tasks are executed in multiple threads. For simplicity each group of urls is processed in it's own thread. In a real application a more versatile implementation would of course be needed. 
 
