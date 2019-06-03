@@ -15,7 +15,12 @@
 1. Activate the environment
 
         $ source activate <env-name>     
-1. Install libraries
+1. Install libraries 
+
+    [```aiohttp``](https://anaconda.org/conda-forge/aiohttp)
+    
+        $ conda install -c conda-forge aiohttp
+1. Optional: Install libraries for testing
 
     [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock)
     
