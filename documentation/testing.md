@@ -2,4 +2,13 @@
 
 ## Testing implementation
 
-## Test report
+Tests have been implemented against and using ```pytest```, ```pytest-asyncio``` and ```mock``` libraries. Full test coverage has not been a motivation but rather demonstrating the use the libraries. 
+
+## Running the tests
+
+Cd to the program's main directory:
+
+$ cd <path-to-download-directory>/programming-exercise
+Execute tests:
+
+$ pytest
