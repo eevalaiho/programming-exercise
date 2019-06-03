@@ -36,3 +36,25 @@ The task description didn't set any specific requirements for storage format. Th
 
 Follow the [installation guide](documentation/installation.md) to install the program. 
 
+### Running the program
+
+Cd to the program's main directory:
+
+    $ cd <path-to-download-directory>/programming-exercise
+
+Execute the program:
+
+    $ python3 app
+
+You may stop program execution at any time by typing Ctrl+C.
+
+### Running tests
+
+Cd to the program's main directory:
+
+    $ cd <path-to-download-directory>/programming-exercise
+    
+Execute tests:
+
+    $ pytest
+
