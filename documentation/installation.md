@@ -30,7 +30,7 @@
 
 To run the program command:
 
-    $ python3 scraper
+    $ python3 app
 You can stop program execution by typing Ctrl+C.
 
 
