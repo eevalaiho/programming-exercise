@@ -17,9 +17,7 @@
 1. Activate the environment
 
         $ source activate <env-name>     
-1. Install libraries 
-
-    [```aiohttp```](https://anaconda.org/conda-forge/aiohttp)
+1. Install libraries [```aiohttp```](https://anaconda.org/conda-forge/aiohttp)
     
         $ conda install -c conda-forge aiohttp
 
@@ -31,18 +29,16 @@ Running the init_app.py command will create a local database file in subdirector
 To run the program command:
 
     $ python3 app
+    
 You can stop program execution by typing Ctrl+C.
 
 
 
 ## **Optional** installation for testing
 
-1. Install libraries
-
-    [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
+1. Install libraries [```pytest```](https://anaconda.org/conda-forge/pytest), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-mock), [```pytest-mock```](https://anaconda.org/conda-forge/pytest-async)
     
         $ conda install -c conda-forge pytest pytest-mock pytest-async
-
 
 To run tests command:
 
